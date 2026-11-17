@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.IO;
 using System.Text;
 
@@ -17,7 +18,7 @@ class Program
         int reportDay = ReadReportDay(lines);
         List<string[]> rows = ReadRows(lines);
         Console.Error.WriteLine("skeleton ok: read " + Path.GetFileName(path) + " - report day " + reportDay + " - " + rows.Count + " rows");
-
+        int fines = StudentFine(34, rows);
         // Write your code here. 'reportDay' and 'rows' are ready.
     }
 
@@ -51,5 +52,73 @@ class Program
             dir = dir.Parent;
         }
         return Path.Combine("data", "sample.txt");
+    }
+
+    static int StudentFine(int reportDay, List<string[]> rows)
+    {
+        int day = 0;
+        for (int i = 0; i < rows.Count; i++) {
+            if (rows[i][3] == "student")
+            {
+                day = rows[i][4] - reportDay;
+                if (day > 15)
+                {
+                    return day;
+                }
+            }
+        }
+        return 0;
+    }
+    static List<string[]> AllRulesFine(int reportDay, List<string[]> rows)
+    {
+        int returnDay = 0;
+        for (int i = 0; i < rows.Count; i++)
+        {
+            if (rows[i][3] == "student")
+            {
+                returnDay = rows[i][4] - reportDay;
+                if (returnDay <= 15)
+                {
+                    rows[i][6] = 0
+                    return rows;
+                }
+                else if (returnDay < 31)
+                {
+                    rows[i][6] = returnDay
+                    return rows;
+                }
+                else
+                    return rows;
+            }
+            else if (rows[i][3] == "guest")
+            {
+                returnDay = rows[i][4] - reportDay;
+                if (returnDay < 7)
+                {
+                    return rows;
+                }
+                else
+                {
+                    int num = 0;
+                    num = (rows[i][4] - reportDay) * 2.5;
+                    rows[i][6] = num;
+                    return rows;
+                }
+            }
+            else
+            {
+                returnDay = rows[i][4] - reportDay;
+                if(returnDay < 61)
+                {
+                    rows[i][6] = 0;
+                    return rows;
+                }
+            }
+        }
+        return rows;
+    }
+    static List<string[]> OneLine(List<string[]> rows)
+    {
+
     }
 }
