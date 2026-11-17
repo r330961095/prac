@@ -1,0 +1,6 @@
+report_day: 100
+reader_id,name,type,book,loan_day,return_day
+1,בדיקת 10,alumna,ספר א,10,20
+2,בדיקת עיגול,alumna,ספר ב,10,21
+3,בדיקת תקרה,alumna,ספר ג,10,40
+4,בדיקת תלמידה,student,ספר ד,1,56

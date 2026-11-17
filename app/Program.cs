@@ -123,7 +123,7 @@ class Program
         {
             if (fields[i] == "") return false;
         }
-        if (fields[2] != "student" && fields[2] != "teacher" && fields[2] != "guest") return false;
+        if (fields[2] != "student" && fields[2] != "teacher" && fields[2] != "guest" && fields[2] != "alumna") return false;
         if (!int.TryParse(fields[4], out int loanDay)) return false;
         if (fields[5] != "")
         {
@@ -155,12 +155,19 @@ class Program
         {
             int lateDays = elapsedDays - 14;
             if (lateDays <= 0) return 0;
-            return lateDays > 30 ? 30 : lateDays;
+            return lateDays > 40 ? 40 : lateDays;
         }
         if (row[2] == "guest")
         {
             int lateDays = elapsedDays - 7;
             return lateDays > 0 ? (int)Math.Ceiling(lateDays * 2.5) : 0;
+        }
+        if (row[2] == "alumna")
+        {
+            int lateDays = elapsedDays - 10;
+            if (lateDays <= 0) return 0;
+            int fine = (int)Math.Ceiling(lateDays * 1.5);
+            return fine > 25 ? 25 : fine;
         }
         return 0;
     }
