@@ -1,0 +1,449 @@
+{
+ "format": "placement-exam-v1",
+ "variant": "v1-plus",
+ "setupOk": true,
+ "student": {
+  "name": "רבקה גרטנברג",
+  "id": "330961095",
+  "lang": "C#",
+  "repo": ""
+ },
+ "t": {
+  "start": 1794915933759,
+  "aEnd": 1794918731323,
+  "bEnd": 1794919715036,
+  "cStart": 1794919715036,
+  "levels": {
+   "1": 1794924102795,
+   "2": 1794924110251,
+   "3": 1794927485096,
+   "4": 1794927538216
+  },
+  "hints": [],
+  "hintCards": [],
+  "run1Open": 1794927726592,
+  "run1Done": 1794927748486,
+  "dStart": 1794927748486,
+  "run2Open": 1794928107755,
+  "run2Done": 1794928115667,
+  "eEnd": 1794929675266,
+  "submitted": 1794929737641,
+  "templateAt": 1794915385548
+ },
+ "a": {
+  "summary": "התכנית מקבלת קובץ של רשימה של השאלות של אנשים מ3 קטגוריות שונות \nהתכנית בודקת של השאלה בקובץ לאיזה קטגוריה היא שייכת ולוקחת את הנתונים ולוקחת את מספר היום הנוכחי ואת מספר היום של ההשאלה ומחזירה את מספר הימים שחלפו ועליהם צריך לשלם קנס לפי הקטגוריה,\nומציגה בסוף את כל הקנסות.",
+  "cases": [
+   {
+    "type": "student",
+    "loan": "100",
+    "ret": "135",
+    "kind": "fine",
+    "val": "0",
+    "why": ""
+   },
+   {
+    "type": "student",
+    "loan": "30",
+    "ret": "10",
+    "kind": "error",
+    "val": "0",
+    "why": ""
+   },
+   {
+    "type": "teacher",
+    "loan": "100",
+    "ret": "160",
+    "kind": "flag",
+    "val": "0",
+    "why": ""
+   },
+   {
+    "type": "student",
+    "loan": "100",
+    "ret": "120",
+    "kind": "fine",
+    "val": "6",
+    "why": ""
+   },
+   {
+    "type": "teacher",
+    "loan": "100",
+    "ret": "130",
+    "kind": "fine",
+    "val": "0",
+    "why": ""
+   }
+  ],
+  "questions": [],
+  "opened": [
+   {
+    "id": 5,
+    "t": 1794917025618
+   },
+   {
+    "id": 3,
+    "t": 1794917110594
+   }
+  ],
+  "plan": [
+   {
+    "part": "קובץ-fines.js",
+    "does": "פונקציה של קריאה מהקריאה קריאה ובדיקה האם הנתונים שהוזנו נכונים ולא צריכים לעבור לברור"
+   },
+   {
+    "part": "קובץ-flagged.js ",
+    "does": "יועתק אליו כל ההשאלות שעונות לכל ההגדרות"
+   },
+   {
+    "part": "קובץ-errors.js",
+    "does": "בתוך הקובץ יש פונקציה שבודקת אם יום החזרה לפני יום ההשאל, היא מופיעה ברשימה \"שורות שגויות\" ולא נכנסת לחישובה או שדה חסר"
+   },
+   {
+    "part": "פונקציה ",
+    "does": "כל השאלה שתשלח אליה ואם יהיה קנס זה ישמר במשתנה שצובר את הקנסות"
+   },
+   {
+    "part": "קובץ-CurrentLoad.js",
+    "does": "מחזירה לכל השאלה את הפרטים הנוכחיים"
+   },
+   {
+    "part": "קובץ-final.js",
+    "does": "הקובץ מחזיר דוח של כל הפרטים של הספרים שהושאלו עם החישובים עם מספר היום הנוכחי והפרטים של ההשאלות ומספר הימים שעברו והסכום של הקנס לכל השאלה והסכום הכללי של הקנסות"
+   }
+  ],
+  "models": [
+   {
+    "name": "student",
+    "fields": "id,name,type,book,loan_day"
+   },
+   {
+    "name": "teacher",
+    "fields": "id,name,type,book,loan_day"
+   },
+   {
+    "name": "guest",
+    "fields": "guest"
+   },
+   {
+    "name": "",
+    "fields": ""
+   }
+  ]
+ },
+ "b": {
+  "b1q1": "8",
+  "b1q2": "0,12,0",
+  "b2": {
+   "q1": "b",
+   "q2": "b",
+   "q3": "once",
+   "q4": "",
+   "text": "יש לה חסרון כי היא עובדת בצורה לא מסודרת"
+  },
+  "b3": {
+   "marks": {
+    "8": "ילדה עד גיל 12 וכולל ולכן צריך =>",
+    "14": "אם יש מעל 10 משתתפים יש 10% הנחה רק על המבוגרים ולא על כלל המשתתפים"
+   },
+   "unmarked": {},
+   "approve": "no",
+   "testAges": "1,2,12,13,14",
+   "testExp": "120"
+  }
+ },
+ "c": {
+  "codeBefore": "",
+  "out1a": "FINES\r\n101,צביה לוין,6\r\n102,תהילה כץ,0\r\n107,יעל אדלר,8\r\n103,שירה גבאי,1\r\n104,דינה שטרן,2\r\n112,בינה קליין,8\r\n105,הדסה וולף,30\r\n113,זהבה אורן,60\r\n106,חנה רוזן,6\r\n121,גאולה חדד,18\r\n108,טובה מזרחי,100\r\n109,רבקה פישר,0\r\n110,פנינה עזרא,0\r\n111,נחמה ברגר,0\r\n114,מיכל דהן,4\r\n115,אורית שמש,4\r\nFLAGGED\r\n110,פנינה עזרא,קיצור שולחן ערוך\r\nTOP_BOOKS\r\nאיסתרק,8\r\nקיצור שולחן ערוך,6\r\nעולם חירש,4\r\nAT_RISK\r\n121,גאולה חדד,3\r\nERRORS\r\nTOTAL,247\r\n",
+  "out1b": "FINES\r\n131,לאה גולן,3\r\n132,עדי פרלמן,5\r\n136,שפרה ליפשיץ,0\r\n137,אסתר כרמי,0\r\nFLAGGED\r\nTOP_BOOKS\r\nאיסתרק,1\r\nלהשאר יהודי,1\r\nעולם חירש,1\r\nAT_RISK\r\nERRORS\r\n133,מלכה נחום,student,איסתרק,80,70\r\n\r\n134,נעמי סגל,student,עולם חירש,40\r\n135,ענבל פרץ,staff,להשאר יהודי,30,40\r\n   \r\nTOTAL,8\r\n",
+  "via": "script",
+  "results": {
+   "kind": "placement-results",
+   "version": 1,
+   "mode": "C",
+   "lang": "csharp",
+   "created": "2026-11-17T17:01:01",
+   "created_epoch": 1794927661001,
+   "at": null,
+   "build": {
+    "ok": true,
+    "output": "Build succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.26",
+    "ms": 1540
+   },
+   "runs": [
+    {
+     "file": "check1a.txt",
+     "exit": 0,
+     "timed_out": false,
+     "ms": 107,
+     "stdout": "FINES\r\n101,צביה לוין,6\r\n102,תהילה כץ,0\r\n107,יעל אדלר,8\r\n103,שירה גבאי,1\r\n104,דינה שטרן,2\r\n112,בינה קליין,8\r\n105,הדסה וולף,30\r\n113,זהבה אורן,60\r\n106,חנה רוזן,6\r\n121,גאולה חדד,18\r\n108,טובה מזרחי,100\r\n109,רבקה פישר,0\r\n110,פנינה עזרא,0\r\n111,נחמה ברגר,0\r\n114,מיכל דהן,4\r\n115,אורית שמש,4\r\nFLAGGED\r\n110,פנינה עזרא,קיצור שולחן ערוך\r\nTOP_BOOKS\r\nאיסתרק,8\r\nקיצור שולחן ערוך,6\r\nעולם חירש,4\r\nAT_RISK\r\n121,גאולה חדד,3\r\nERRORS\r\nTOTAL,247\r\n",
+     "stderr_tail": "skeleton ok: read check1a.txt - report day 150 - 20 rows",
+     "decode_problem": false
+    },
+    {
+     "file": "check1b.txt",
+     "exit": 0,
+     "timed_out": false,
+     "ms": 100,
+     "stdout": "FINES\r\n131,לאה גולן,3\r\n132,עדי פרלמן,5\r\n136,שפרה ליפשיץ,0\r\n137,אסתר כרמי,0\r\nFLAGGED\r\nTOP_BOOKS\r\nאיסתרק,1\r\nלהשאר יהודי,1\r\nעולם חירש,1\r\nAT_RISK\r\nERRORS\r\n133,מלכה נחום,student,איסתרק,80,70\r\n\r\n134,נעמי סגל,student,עולם חירש,40\r\n135,ענבל פרץ,staff,להשאר יהודי,30,40\r\n   \r\nTOTAL,8\r\n",
+     "stderr_tail": "skeleton ok: read check1b.txt - report day 150 - 9 rows",
+     "decode_problem": false
+    }
+   ],
+   "sample_run": {
+    "file": "sample.txt",
+    "exit": 0,
+    "timed_out": false,
+    "ms": 102,
+    "stdout": "FINES\r\n11,רחל כהן,2\r\n12,מרים לוי,30\r\n21,שרה גולד,0\r\n31,לאה רוזן,8\r\nFLAGGED\r\n21,שרה גולד,להשאר יהודי\r\nTOP_BOOKS\r\nעולם חירש,2\r\nאיסתרק,1\r\nלהשאר יהודי,1\r\nAT_RISK\r\nERRORS\r\n13,דינה אבן,student,קיצור שולחן ערוך,50,45\r\nTOTAL,40\r\n",
+    "stderr_tail": "skeleton ok: read sample.txt - report day 120 - 6 rows",
+    "decode_problem": false
+   },
+   "warnings": [],
+   "files": [
+    {
+     "path": "app/Program.cs",
+     "lines": 174,
+     "classes": [
+      "Program"
+     ],
+     "functions": [
+      {
+       "name": "Main",
+       "lines": 80
+      },
+      {
+       "name": "ReadReportDay",
+       "lines": 4
+      },
+      {
+       "name": "ReadRows",
+       "lines": 18
+      },
+      {
+       "name": "IsValidRow",
+       "lines": 15
+      },
+      {
+       "name": "FindSample",
+       "lines": 11
+      },
+      {
+       "name": "FineAmount",
+       "lines": 19
+      },
+      {
+       "name": "IsFlaggedTeacher",
+       "lines": 6
+      }
+     ],
+     "type_ifs": 4
+    }
+   ],
+   "git": {
+    "available": true,
+    "commit": "aef5a57",
+    "note": "nothing new to commit",
+    "log": "e8d2b2f|2026-11-17 13:38:42 +0200|start\n3faccc8|2026-11-17 16:17:30 +0200|16:10ללא copilot\na96695e|2026-11-17 16:21:29 +0200|level 1\naef5a57|2026-11-17 16:59:22 +0200|level 3",
+    "numstat": "commit|e8d2b2f|start\n\n7\t0\t.gitignore\n3\t0\tPractikum/Practikum.slnx\n10\t0\tPractikum/Practikum/Practikum.csproj\n7\t0\tPractikum/Practikum/Program.cs\n4\t0\tPractikum/Practikum/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\n23\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfo.cs\n1\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfoInputs.cache\n18\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GeneratedMSBuildEditorConfig.editorconfig\n8\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GlobalUsings.g.cs\n-\t-\tPractikum/Practikum/obj/Debug/net10.0/Practikum.assets.cache\n350\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.dgspec.json\n16\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.props\n2\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.targets\n356\t0\tPractikum/Practikum/obj/project.assets.json\n8\t0\tPractikum/Practikum/obj/project.nuget.cache\n55\t0\tapp/Program.cs\n11\t0\tapp/app.csproj\n449\t0\tcheck/run_checks.py\n8\t0\tdata/sample.txt\ncommit|3faccc8|16:10ללא copilot\n\n0\t3\tPractikum/Practikum.slnx\n0\t10\tPractikum/Practikum/Practikum.csproj\n0\t7\tPractikum/Practikum/Program.cs\n0\t4\tPractikum/Practikum/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\n0\t23\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfo.cs\n0\t1\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfoInputs.cache\n0\t18\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GeneratedMSBuildEditorConfig.editorconfig\n0\t8\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GlobalUsings.g.cs\n-\t-\tPractikum/Practikum/obj/Debug/net10.0/Practikum.assets.cache\n0\t350\tPractikum/Practikum/obj/Practikum.csproj.nuget.dgspec.json\n0\t16\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.props\n0\t2\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.targets\n0\t356\tPractikum/Practikum/obj/project.assets.json\n0\t8\tPractikum/Practikum/obj/project.nuget.cache\ncommit|a96695e|level 1\n\n71\t2\tapp/Program.cs\ncommit|aef5a57|level 3\n\n117\t67\tapp/Program.cs"
+   }
+  },
+  "uploads": [
+   {
+    "t": 1794927726592,
+    "created": "2026-11-17T17:01:01",
+    "commit": "aef5a57",
+    "warnings": [],
+    "runs": [
+     {
+      "file": "check1a.txt",
+      "exit": 0,
+      "timed_out": false
+     },
+     {
+      "file": "check1b.txt",
+      "exit": 0,
+      "timed_out": false
+     }
+    ]
+   }
+  ]
+ },
+ "d": {
+  "codeAfter": "",
+  "out2": "FINES\r\n201,הניה ברק,40\r\n202,צפורה לנדאו,6\r\n214,זלדה פרי,8\r\n203,גליה שפירא,5\r\n204,דליה כהנא,25\r\n205,יוכבד ליבר,2\r\n206,תמר אלון,0\r\n207,שולמית רז,0\r\n208,רות בן דוד,1\r\n209,ברכה טל,2\r\n210,טליה נוי,13\r\n211,פזית הורוביץ,0\r\n212,נאוה שגיא,0\r\n213,חיה מור,6\r\n217,מרים אשכנזי,4\r\n218,אילנה צור,4\r\nFLAGGED\r\n211,פזית הורוביץ,קיצור שולחן ערוך\r\nTOP_BOOKS\r\nאיסתרק,5\r\nקיצור שולחן ערוך,5\r\nעולם חירש,4\r\nAT_RISK\r\nERRORS\r\nTOTAL,116\r\n",
+  "via": "script",
+  "results": {
+   "kind": "placement-results",
+   "version": 1,
+   "mode": "D",
+   "lang": "csharp",
+   "created": "2026-11-17T17:08:10",
+   "created_epoch": 1794928090294,
+   "at": null,
+   "build": {
+    "ok": true,
+    "output": "Build succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:01.67",
+    "ms": 1986
+   },
+   "runs": [
+    {
+     "file": "check2.txt",
+     "exit": 0,
+     "timed_out": false,
+     "ms": 112,
+     "stdout": "FINES\r\n201,הניה ברק,40\r\n202,צפורה לנדאו,6\r\n214,זלדה פרי,8\r\n203,גליה שפירא,5\r\n204,דליה כהנא,25\r\n205,יוכבד ליבר,2\r\n206,תמר אלון,0\r\n207,שולמית רז,0\r\n208,רות בן דוד,1\r\n209,ברכה טל,2\r\n210,טליה נוי,13\r\n211,פזית הורוביץ,0\r\n212,נאוה שגיא,0\r\n213,חיה מור,6\r\n217,מרים אשכנזי,4\r\n218,אילנה צור,4\r\nFLAGGED\r\n211,פזית הורוביץ,קיצור שולחן ערוך\r\nTOP_BOOKS\r\nאיסתרק,5\r\nקיצור שולחן ערוך,5\r\nעולם חירש,4\r\nAT_RISK\r\nERRORS\r\nTOTAL,116\r\n",
+     "stderr_tail": "skeleton ok: read check2.txt - report day 200 - 17 rows",
+     "decode_problem": false
+    }
+   ],
+   "sample_run": {
+    "file": "sample.txt",
+    "exit": 0,
+    "timed_out": false,
+    "ms": 109,
+    "stdout": "FINES\r\n11,רחל כהן,2\r\n12,מרים לוי,40\r\n21,שרה גולד,0\r\n31,לאה רוזן,8\r\nFLAGGED\r\n21,שרה גולד,להשאר יהודי\r\nTOP_BOOKS\r\nעולם חירש,2\r\nאיסתרק,1\r\nלהשאר יהודי,1\r\nAT_RISK\r\nERRORS\r\n13,דינה אבן,student,קיצור שולחן ערוך,50,45\r\nTOTAL,50\r\n",
+    "stderr_tail": "skeleton ok: read sample.txt - report day 120 - 6 rows",
+    "decode_problem": false
+   },
+   "warnings": [],
+   "files": [
+    {
+     "path": "app/Program.cs",
+     "lines": 181,
+     "classes": [
+      "Program"
+     ],
+     "functions": [
+      {
+       "name": "Main",
+       "lines": 80
+      },
+      {
+       "name": "ReadReportDay",
+       "lines": 4
+      },
+      {
+       "name": "ReadRows",
+       "lines": 18
+      },
+      {
+       "name": "IsValidRow",
+       "lines": 15
+      },
+      {
+       "name": "FindSample",
+       "lines": 11
+      },
+      {
+       "name": "FineAmount",
+       "lines": 26
+      },
+      {
+       "name": "IsFlaggedTeacher",
+       "lines": 6
+      }
+     ],
+     "type_ifs": 5
+    }
+   ],
+   "git": {
+    "available": true,
+    "commit": "4d02fa5",
+    "note": "nothing new to commit",
+    "log": "e8d2b2f|2026-11-17 13:38:42 +0200|start\n3faccc8|2026-11-17 16:17:30 +0200|16:10ללא copilot\na96695e|2026-11-17 16:21:29 +0200|level 1\naef5a57|2026-11-17 16:59:22 +0200|level 3\n19ec486|2026-11-17 17:03:23 +0200|WITH COPILOT\n4d02fa5|2026-11-17 17:07:02 +0200|change 1",
+    "numstat": "commit|e8d2b2f|start\n\n7\t0\t.gitignore\n3\t0\tPractikum/Practikum.slnx\n10\t0\tPractikum/Practikum/Practikum.csproj\n7\t0\tPractikum/Practikum/Program.cs\n4\t0\tPractikum/Practikum/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\n23\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfo.cs\n1\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfoInputs.cache\n18\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GeneratedMSBuildEditorConfig.editorconfig\n8\t0\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GlobalUsings.g.cs\n-\t-\tPractikum/Practikum/obj/Debug/net10.0/Practikum.assets.cache\n350\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.dgspec.json\n16\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.props\n2\t0\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.targets\n356\t0\tPractikum/Practikum/obj/project.assets.json\n8\t0\tPractikum/Practikum/obj/project.nuget.cache\n55\t0\tapp/Program.cs\n11\t0\tapp/app.csproj\n449\t0\tcheck/run_checks.py\n8\t0\tdata/sample.txt\ncommit|3faccc8|16:10ללא copilot\n\n0\t3\tPractikum/Practikum.slnx\n0\t10\tPractikum/Practikum/Practikum.csproj\n0\t7\tPractikum/Practikum/Program.cs\n0\t4\tPractikum/Practikum/obj/Debug/net10.0/.NETCoreApp,Version=v10.0.AssemblyAttributes.cs\n0\t23\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfo.cs\n0\t1\tPractikum/Practikum/obj/Debug/net10.0/Practikum.AssemblyInfoInputs.cache\n0\t18\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GeneratedMSBuildEditorConfig.editorconfig\n0\t8\tPractikum/Practikum/obj/Debug/net10.0/Practikum.GlobalUsings.g.cs\n-\t-\tPractikum/Practikum/obj/Debug/net10.0/Practikum.assets.cache\n0\t350\tPractikum/Practikum/obj/Practikum.csproj.nuget.dgspec.json\n0\t16\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.props\n0\t2\tPractikum/Practikum/obj/Practikum.csproj.nuget.g.targets\n0\t356\tPractikum/Practikum/obj/project.assets.json\n0\t8\tPractikum/Practikum/obj/project.nuget.cache\ncommit|a96695e|level 1\n\n71\t2\tapp/Program.cs\ncommit|aef5a57|level 3\n\n117\t67\tapp/Program.cs\ncommit|19ec486|WITH COPILOT\n\n91\t0\tresults_C.json\ncommit|4d02fa5|change 1\n\n9\t2\tapp/Program.cs\n6\t0\tdata/alumna-check.txt"
+   }
+  },
+  "uploads": [
+   {
+    "t": 1794928107755,
+    "created": "2026-11-17T17:08:10",
+    "commit": "4d02fa5",
+    "warnings": [],
+    "runs": [
+     {
+      "file": "check2.txt",
+      "exit": 0,
+      "timed_out": false
+     }
+    ]
+   }
+  ]
+ },
+ "e": {
+  "conf": {
+   "a": "5",
+   "b": "4",
+   "c": "4",
+   "d": "5"
+  },
+  "cleanLevel": "3",
+  "hardest": "הכי קשה היה לדייק בגבולות של הקנס: יום החסד של תלמידה, התקרה לכל השאלה, וההבדל בין קנס לכל השאלה לבין הסכום שמציגים לכל קוראת. כשלא הייתי בטוחה לגבי יום החסד, השתמשתי בדוגמה המפורשת של רחל (0 ועוד 2 ₪) כדי ליישב את הפער, ואז בדקתי את הקצוות בהרצה.",
+  "stuck": "כשנתקעתי על השאלה אם יום ההחזרה של רחל אמור להניב קנס של 1 או 2 ₪, השוויתי את החישוב לדוגמה שנתת: 0 ועוד 2. זה הבהיר איך לפרש את יום החסד, ועדכנתי את החישוב ובדקתי אותו בהרצה. בנוסף בדקתי מקרי גבול לתקרות ולעיגול של alumna.",
+  "decision": "החלטה אחת בקוד היא לחשב את הקנס לכל השאלה בנפרד לפני שמחברים אותו לסכום של הקוראת. כך התקרה חלה על כל השאלה, ולא בטעות על הסכום הכולל של אותה קוראת.\n\n",
+  "million": "החלק שהכי עלול להאט או להכביד הוא File.ReadAllLines: הוא טוען את כל הקובץ לזיכרון בבת אחת, והקוד גם שומר רשימות של ההשאלות והשגיאות. במיליון שורות זה עלול לצרוך הרבה זיכרון.\n\nהעיבוד עצמו הוא ברובו מעבר ליניארי על השורות, כלומר \n𝑂\n(\n𝑛\n)\nO(n); מיון הספרים מוסיף עד \n𝑂\n(\n𝑏\nlog\n⁡\n𝑏\n)\nO(blogb), כאשר \n𝑏\nb הוא מספר הספרים השונים. לשיפור, הייתי קוראת את הקובץ שורה־שורה ומעדכנת את הסיכומים תוך כדי, במקום לשמור את כל השורות בזיכרון.",
+  "gitLog": "e8d2b2f|2026-11-17 13:38:42 +0200|start\n3faccc8|2026-11-17 16:17:30 +0200|16:10ללא copilot\na96695e|2026-11-17 16:21:29 +0200|level 1\naef5a57|2026-11-17 16:59:22 +0200|level 3\n19ec486|2026-11-17 17:03:23 +0200|WITH COPILOT\n4d02fa5|2026-11-17 17:07:02 +0200|change 1",
+  "diag": {
+   "marks": {
+    "s1": {
+     "A": [
+      "LibraryReport"
+     ],
+     "B": [
+      "ReportBuilder"
+     ],
+     "C": [
+      "ReportBuilder"
+     ]
+    },
+    "s2": {
+     "A": [
+      "LibraryReport"
+     ],
+     "B": [
+      "ReportBuilder"
+     ],
+     "C": [
+      "ReportBuilder"
+     ]
+    },
+    "s3": {
+     "A": [
+      "LibraryReport"
+     ],
+     "B": [
+      "ReportBuilder"
+     ],
+     "C": [
+      "ReportBuilder"
+     ]
+    }
+   },
+   "newc": {
+    "s1": {
+     "A": false,
+     "B": false,
+     "C": false
+    },
+    "s2": {
+     "A": false,
+     "B": false,
+     "C": false
+    },
+    "s3": {
+     "A": false,
+     "B": false,
+     "C": false
+    }
+   },
+   "choice": "B",
+   "reason": "r2",
+   "move": {
+    "method": "",
+    "to": ""
+   },
+   "own": "A"
+  }
+ },
+ "integrity": "0cd33978"
+}
